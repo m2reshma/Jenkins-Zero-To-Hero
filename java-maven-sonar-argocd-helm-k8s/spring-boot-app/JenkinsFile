@@ -10,15 +10,11 @@ pipeline {
     PATH = "${JAVA_HOME}/bin:${PATH}"
   }
   stages {
-      stage('Checkout') {
-          steps {
-              sh 'java -version'
-              sh 'javac -version'
-              sh 'echo JAVA_HOME=$JAVA_HOME'
-          }
-      }
     stage('Checkout') {
       steps {
+        sh 'java -version'
+        sh 'javac -version'
+        sh 'echo JAVA_HOME=$JAVA_HOME'
         sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/m2reshma/Jenkins-Zero-To-Hero.git'
       }
