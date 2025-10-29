@@ -5,9 +5,18 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-  tools {
-    jdk 'JDK17'
+  environment {
+    JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+    PATH = "${JAVA_HOME}/bin:${PATH}"
   }
+  stages {
+      stage('Checkout') {
+          steps {
+              sh 'java -version'
+              sh 'javac -version'
+              sh 'echo JAVA_HOME=$JAVA_HOME'
+          }
+      }
   stages {
     stage('Checkout') {
       steps {
