@@ -7,7 +7,6 @@ pipeline {
   }
   tools {
     jdk 'openjdk-17'
-    maven 'maven-abhishek'
   }
   stages {
     stage('Checkout') {
