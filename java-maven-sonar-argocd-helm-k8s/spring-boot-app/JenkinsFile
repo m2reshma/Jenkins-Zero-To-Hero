@@ -17,7 +17,7 @@ pipeline {
               sh 'echo JAVA_HOME=$JAVA_HOME'
           }
       }
-}
+  }
   stages {
     stage('Checkout') {
       steps {
